@@ -1,15 +1,30 @@
 /** \file simple_math.c
-	\brief a toy example of math library
-	\author Mattia De Lorenzi
+	\brief definition of the functions 
+	\author Paolo Gastaldo
+  
 */
 
 #include "simple_math.h"
 
-float mean(int a, int b){
-	return (a+b)/2;
+cx_float_t cx_mean (cx_int_t a,cx_int_t b) {
+	
+	cx_float_t average;
+	
+	average.re = (a.re + b.re) / 2;
+	average.imm = (a.imm + b.imm) / 2;
+	
+	return average;
+	
 }
-int max(int a, int b){
-	if( a > b)
-		return a;
+
+
+float mean(int a, int b) {
+	return (a+b)/2.0;
+}
+
+int max (int a, int b) {
+	
+	if (a > b) 
+		return a; 
 	return b;
 }
